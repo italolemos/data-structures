@@ -5,7 +5,6 @@ def buildParseTree(fpexp):
     fplist = fpexp.split()
     pStack = Stack()
     eTree = BinaryTree('')
-    print(eTree)
     pStack.push(eTree)
     currentTree = eTree
     for i in fplist:
@@ -27,17 +26,10 @@ def buildParseTree(fpexp):
             currentTree = pStack.pop()
         else:
             raise ValueError
-    print(currentTree)
-    # print(pStack.size())
-    # p = pStack.pop()
-    # print(p.getRootVal())
     return eTree
 
 
 
 if __name__ == '__main__':
-    # pt = buildParseTree("( ( 10 + 5 ) * 3 )")
-    pt = buildParseTree("( 3 +")
-
-
-# ['(', '3', '+', '(', '4', '*', '5' ,')',')']
+    pt = buildParseTree("( ( 10 + 5 ) * 3 )")
+    # pt = buildParseTree("( 3 + ( 4 * 5 ) )")
